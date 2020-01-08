@@ -1,7 +1,5 @@
 # Pager Code Test
-solution to the proposed code exercise
-
-is based mainly on the pattern of injection of dependencies, so the configuration file is responsible
+this solutions is mainly based on the injection pattern, so the configuration file is responsible
 for making the composition of controllers, services and repositories
 
 #### notes
