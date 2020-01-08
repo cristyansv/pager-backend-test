@@ -1,0 +1,26 @@
+version: '3'
+services:
+  pager-api:
+    container_name: pager-api
+    build: .
+    links:
+      - mysql:mysql
+    environment:
+      - DB_HOST=mysql
+      - DB_USER=pager
+      - DB_DATABASE=pager
+      - DB_PASSWORD=pager
+    ports:
+      - "3000:3000"
+    command: npm start
+  mysql:
+    container_name: mysql
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=my-secret-pw
+      - MYSQL_DATABASE=pager
+      - MYSQL_USER=pager
+      - MYSQL_PASSWORD=pager
+    ports:
+      - "3306:3306"
